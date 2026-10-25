@@ -1,0 +1,72 @@
+{
+  "input_row_count": 3000888,
+  "output_row_count": 3000888,
+  "feature_count": 22,
+  "total_column_count": 28,
+  "engineered_feature_names": [
+    "sales_lag_1d",
+    "sales_lag_7d",
+    "sales_lag_14d",
+    "sales_lag_28d",
+    "sales_rolling_mean_7d",
+    "sales_rolling_std_7d",
+    "sales_rolling_mean_14d",
+    "sales_rolling_std_14d",
+    "sales_rolling_mean_30d",
+    "sales_rolling_std_30d",
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "quarter",
+    "year",
+    "is_weekend",
+    "day_of_week_sin",
+    "day_of_week_cos",
+    "month_sin",
+    "month_cos",
+    "is_holiday",
+    "is_event"
+  ],
+  "date_range": {
+    "min_date": "2013-01-01",
+    "max_date": "2017-08-15"
+  },
+  "missing_values_by_feature": {
+    "sales_lag_1d": 8910,
+    "sales_lag_7d": 19602,
+    "sales_lag_14d": 32076,
+    "sales_lag_28d": 57024,
+    "sales_rolling_mean_7d": 1782,
+    "sales_rolling_std_7d": 3564,
+    "sales_rolling_mean_14d": 1782,
+    "sales_rolling_std_14d": 3564,
+    "sales_rolling_mean_30d": 1782,
+    "sales_rolling_std_30d": 3564,
+    "day_of_week": 0,
+    "day_of_month": 0,
+    "month": 0,
+    "quarter": 0,
+    "year": 0,
+    "is_weekend": 0,
+    "day_of_week_sin": 0,
+    "day_of_week_cos": 0,
+    "month_sin": 0,
+    "month_cos": 0,
+    "is_holiday": 0,
+    "is_event": 0
+  },
+  "transformations_performed": [
+    "Generated exact calendar-day demand lags for [1, 7, 14, 28] days.",
+    "Generated calendar-window rolling means and standard deviations for [7, 14, 30] days (closed='left').",
+    "Generated deterministic calendar signals and cyclical sine/cosine encodings.",
+    "Generated store-specific holiday and business event indicators.",
+    "Sorted deterministically by modeling grain: ['date', 'store_nbr', 'family']."
+  ],
+  "warnings_and_limitations": [
+    "Lags strictly require exact calendar date match; missing historical dates result in NaN.",
+    "Rolling statistics strictly exclude current target (closed='left') across previous W calendar days.",
+    "Sample standard deviation is NaN when fewer than 2 observations are present in rolling window.",
+    "No future target values or lookahead observations were used.",
+    "Unobserved dates were not filled with synthetic zero-sales records."
+  ]
+}
