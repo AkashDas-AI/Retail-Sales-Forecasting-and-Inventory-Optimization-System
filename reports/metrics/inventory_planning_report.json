@@ -1,0 +1,63 @@
+{
+  "report_type": "inventory_planning_and_recommendation_report",
+  "timestamp_generated": "2026-10-26T02:23:14.512601",
+  "planning_grain": "(store_nbr, family)",
+  "series_count": 1782,
+  "calibration_window": {
+    "partition": "validation",
+    "start_date": "2017-06-21",
+    "end_date": "2017-07-18",
+    "total_observations": 49896
+  },
+  "configured_parameters": {
+    "target_service_level_csl": 0.95,
+    "service_level_z": 1.6448536269514722,
+    "lead_time_days": 7,
+    "annual_holding_cost_rate": 0.2,
+    "default_unit_cost_usd": 10.0,
+    "annual_holding_cost_per_unit_usd": 2.0,
+    "daily_holding_cost_per_unit_usd": 0.00547945,
+    "order_cost_usd": 50.0,
+    "minimum_order_quantity": 10.0,
+    "batch_order_multiple": 5.0,
+    "uncertainty_shrinkage_k": 7,
+    "residual_std_floor": 0.05,
+    "lead_time_compounding_mode": "ar1_analytical",
+    "ar1_rho_fallback": 0.25
+  },
+  "data_provenance_and_assumptions": {
+    "demand": "Model out-of-sample forecast from validation set (observed/derived)",
+    "forecast_residuals": "Actual sales minus model prediction on validation set (observed/derived)",
+    "on_hand_inventory": "Simulated baseline of 14.0 days of average demand (synthetic assumption)",
+    "lead_time": "Configured baseline assumption (7 calendar days)",
+    "costs": "Configured baseline assumptions (holding rate 20%, order cost $50, unit cost $10)",
+    "shortage_penalty": "Synthetic simulation parameter (not observed)"
+  },
+  "uncertainty_quality_distribution": {
+    "RELIABLE": 1613,
+    "SPARSE_SHRUNK": 169
+  },
+  "recommendation_summary": {
+    "total_planning_units": 1782,
+    "orders_triggered": 299,
+    "percent_units_reordered": 16.78,
+    "total_recommended_order_units": 46445.0,
+    "total_estimated_purchase_spend_usd": 464450.0,
+    "priority_breakdown": {
+      "NONE": 1483,
+      "HIGH": 162,
+      "NORMAL": 137
+    }
+  },
+  "policy_metrics_summary": {
+    "mean_daily_demand": 482.55,
+    "mean_safety_stock": 407.76,
+    "mean_reorder_point": 3785.61,
+    "mean_eoq_recommended": 1780.66,
+    "total_safety_stock_buffer_units": 726628.86
+  },
+  "output_artifacts": {
+    "inventory_policies_file": "D:\\Projects\\Data Science\\Retail Sales Forecasting & Inventory Optimization System\\outputs\\recommendations\\inventory_policies.csv",
+    "purchase_orders_file": "D:\\Projects\\Data Science\\Retail Sales Forecasting & Inventory Optimization System\\outputs\\recommendations\\purchase_orders.csv"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_comment": "Conservative baseline parameters for inventory policy optimization and discrete-event simulation. All costs, lead times, and correlation parameters are configured assumptions.",
+  "target_service_level": 0.95,
+  "z_score_service_level": 1.645,
+  "default_lead_time_days": 7,
+  "default_lead_time_variance_days": 1.0,
+  "default_holding_cost_annual_rate": 0.20,
+  "default_fixed_order_cost_usd": 50.0,
+  "default_unit_cost_usd": 10.0,
+  "stockout_penalty_multiplier": 1.5,
+  "review_period_days": 7,
+  "minimum_order_quantity": 10,
+  "batch_order_multiples": 5,
+  "max_allowable_stock_days": 60,
+  "uncertainty_policy": {
+    "source_partition": "validation",
+    "residual_std_floor": 0.05,
+    "shrinkage_k": 7,
+    "lead_time_compounding_mode": "ar1_analytical",
+    "ar1_rho_fallback": 0.25,
+    "_note": "ar1_rho_fallback=0.25 is an assumed compounding multiplier for recursive horizons. In rolling 1-step validation residuals, empirical autocorr is near zero (~0.0014)."
+  },
+  "simulation": {
+    "warmup_days": 7,
+    "initial_inventory_days_of_supply": 14,
+    "backlog_allowed": false
+  }
+}
