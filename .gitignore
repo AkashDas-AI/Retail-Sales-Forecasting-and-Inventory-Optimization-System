@@ -1,0 +1,122 @@
+# ==============================================================================
+# Environment & Containment
+# ==============================================================================
+.venv/
+env/
+venv/
+ENV/
+.cache/
+.pip-cache/
+
+# ==============================================================================
+# Python Bytecode & Runtime
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==============================================================================
+# Testing & Code Analysis
+# ==============================================================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+
+# ==============================================================================
+# Jupyter Notebooks
+# ==============================================================================
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# ==============================================================================
+# Secrets & Environment Variables
+# ==============================================================================
+.env
+.env.*
+!.env.example
+secrets.json
+.streamlit/secrets.toml
+
+# ==============================================================================
+# Personal Interview & Preparation Documents (Excluded from Public Git)
+# ==============================================================================
+docs/*interview*
+docs/interview_preparation_guide.md
+docs/interview_notes.md
+
+# ==============================================================================
+# IDE & Machine-Specific Metadata
+# ==============================================================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# ==============================================================================
+# Data & Large Datasets (Default Excluded)
+# ==============================================================================
+*.zip
+data/*.zip
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Allow sample data and documentation
+!data/sample/**
+
+# ==============================================================================
+# Model Weights & Large Binaries
+# ==============================================================================
+models/*
+!models/.gitkeep
+!models/README.md
+!models/*.json
+*.joblib
+*.pkl
+*.onnx
+*.bin
+*.model
+
+# ==============================================================================
+# Generated Pipeline Outputs & Evaluation Reports
+# ==============================================================================
+outputs/forecasts/*
+!outputs/forecasts/.gitkeep
+outputs/recommendations/*
+!outputs/recommendations/.gitkeep
+outputs/simulation/*
+!outputs/simulation/.gitkeep
+reports/figures/*
+!reports/figures/.gitkeep
+reports/metrics/*
+!reports/metrics/.gitkeep
+!reports/metrics/*.json

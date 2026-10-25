@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retail-sales-forecasting-inventory-optimization"
+version = "0.1.0"
+description = "Retail Sales Forecasting and Dynamic Inventory Optimization System"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Senior Data Science Engineer" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --strict-markers"
+markers = [
+    "unit: Unit tests for standalone functions",
+    "integration: Multi-module integration pipelines",
+]
+
