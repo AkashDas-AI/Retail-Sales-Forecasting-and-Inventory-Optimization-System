@@ -1,0 +1,58 @@
+{
+  "model_type": "RandomForestRegressor",
+  "training_cutoff": "2017-06-20",
+  "environment_versions": {
+    "scikit_learn": "1.9.1",
+    "joblib": "1.6.0",
+    "pandas": "2.3.3",
+    "numpy": "2.4.6"
+  },
+  "preprocessing": {
+    "missing_imputation_strategy": "median",
+    "categorical_encoder": "OrdinalEncoder",
+    "non_negative_clipping": true
+  },
+  "hyperparameters": {
+    "n_estimators": 60,
+    "max_depth": 16,
+    "max_features": "sqrt",
+    "min_samples_leaf": 4,
+    "random_seed": 42
+  },
+  "feature_count": 24,
+  "feature_names": [
+    "sales_lag_1d",
+    "sales_lag_7d",
+    "sales_lag_14d",
+    "sales_lag_28d",
+    "sales_rolling_mean_7d",
+    "sales_rolling_std_7d",
+    "sales_rolling_mean_14d",
+    "sales_rolling_std_14d",
+    "sales_rolling_mean_30d",
+    "sales_rolling_std_30d",
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "quarter",
+    "year",
+    "is_weekend",
+    "day_of_week_sin",
+    "day_of_week_cos",
+    "month_sin",
+    "month_cos",
+    "is_holiday",
+    "is_event",
+    "store_nbr",
+    "family_encoded"
+  ],
+  "validation_metrics": {
+    "sample_count": 49896,
+    "total_actual_sales": 23803457.849212803,
+    "total_forecast_sales": 24077346.121266574,
+    "mae": 51.5574,
+    "rmse": 197.2607,
+    "wape_pct": 10.8073,
+    "bias_pct": 1.1506
+  }
+}

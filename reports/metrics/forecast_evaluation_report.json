@@ -1,0 +1,1267 @@
+{
+  "execution_metadata": {
+    "timestamp": "2026-10-25T19:50:39Z",
+    "total_elapsed_seconds": 96.34,
+    "features_input_file": "D:\\Projects\\Data Science\\Retail Sales Forecasting & Inventory Optimization System\\data\\processed\\sales_features.csv",
+    "model_type": "RandomForestRegressor",
+    "hyperparameters": {
+      "n_estimators": 60,
+      "max_depth": 16,
+      "max_features": "sqrt",
+      "min_samples_leaf": 4,
+      "random_seed": 42
+    },
+    "split_boundaries": {
+      "train_start": "2016-01-01",
+      "train_end": "2017-06-20",
+      "val_start": "2017-06-21",
+      "val_end": "2017-07-18",
+      "holdout_start": "2017-07-19",
+      "holdout_end": "2017-08-15"
+    },
+    "feature_count": 24,
+    "feature_names": [
+      "sales_lag_1d",
+      "sales_lag_7d",
+      "sales_lag_14d",
+      "sales_lag_28d",
+      "sales_rolling_mean_7d",
+      "sales_rolling_std_7d",
+      "sales_rolling_mean_14d",
+      "sales_rolling_std_14d",
+      "sales_rolling_mean_30d",
+      "sales_rolling_std_30d",
+      "day_of_week",
+      "day_of_month",
+      "month",
+      "quarter",
+      "year",
+      "is_weekend",
+      "day_of_week_sin",
+      "day_of_week_cos",
+      "month_sin",
+      "month_cos",
+      "is_holiday",
+      "is_event",
+      "store_nbr",
+      "family_encoded"
+    ]
+  },
+  "mode_a_one_step_ahead": {
+    "validation": {
+      "seasonal_naive": {
+        "sample_count": 49896,
+        "total_actual_sales": 23803457.849212803,
+        "total_forecast_sales": 23961938.284055598,
+        "mae": 83.291,
+        "rmse": 327.5132,
+        "wape_pct": 17.4592,
+        "bias_pct": 0.6658
+      },
+      "random_forest": {
+        "sample_count": 49896,
+        "total_actual_sales": 23803457.849212803,
+        "total_forecast_sales": 24077346.121266574,
+        "mae": 51.5574,
+        "rmse": 197.2607,
+        "wape_pct": 10.8073,
+        "bias_pct": 1.1506
+      },
+      "by_family_rf": {
+        "AUTOMOTIVE": {
+          "sample_count": 1512,
+          "total_actual_sales": 10871.0,
+          "total_forecast_sales": 11235.97609441409,
+          "mae": 2.8005,
+          "rmse": 3.7924,
+          "wape_pct": 38.9503,
+          "bias_pct": 3.3573
+        },
+        "BABY CARE": {
+          "sample_count": 1512,
+          "total_actual_sales": 323.0,
+          "total_forecast_sales": 441.00387153938186,
+          "mae": 0.3425,
+          "rmse": 0.8277,
+          "wape_pct": 160.3346,
+          "bias_pct": 36.5337
+        },
+        "BEAUTY": {
+          "sample_count": 1512,
+          "total_actual_sales": 8723.0,
+          "total_forecast_sales": 8861.442634948826,
+          "mae": 2.2424,
+          "rmse": 3.2152,
+          "wape_pct": 38.8685,
+          "bias_pct": 1.5871
+        },
+        "BEVERAGES": {
+          "sample_count": 1512,
+          "total_actual_sales": 5341506.0,
+          "total_forecast_sales": 5381252.127330178,
+          "mae": 404.3956,
+          "rmse": 762.5701,
+          "wape_pct": 11.4471,
+          "bias_pct": 0.7441
+        },
+        "BOOKS": {
+          "sample_count": 1512,
+          "total_actual_sales": 45.0,
+          "total_forecast_sales": 194.63260791737156,
+          "mae": 0.1442,
+          "rmse": 0.3086,
+          "wape_pct": 484.6042,
+          "bias_pct": 332.5169
+        },
+        "BREAD/BAKERY": {
+          "sample_count": 1512,
+          "total_actual_sales": 845733.3702400001,
+          "total_forecast_sales": 852332.1080998732,
+          "mae": 53.4819,
+          "rmse": 76.9845,
+          "wape_pct": 9.5615,
+          "bias_pct": 0.7802
+        },
+        "CELEBRATION": {
+          "sample_count": 1512,
+          "total_actual_sales": 20190.0,
+          "total_forecast_sales": 20766.934487668455,
+          "mae": 5.1747,
+          "rmse": 8.0645,
+          "wape_pct": 38.7528,
+          "bias_pct": 2.8575
+        },
+        "CLEANING": {
+          "sample_count": 1512,
+          "total_actual_sales": 1987447.0,
+          "total_forecast_sales": 1933209.6879862724,
+          "mae": 220.1151,
+          "rmse": 528.0845,
+          "wape_pct": 16.7458,
+          "bias_pct": -2.729
+        },
+        "DAIRY": {
+          "sample_count": 1512,
+          "total_actual_sales": 1373783.0,
+          "total_forecast_sales": 1412478.2755131535,
+          "mae": 75.0738,
+          "rmse": 106.0964,
+          "wape_pct": 8.2627,
+          "bias_pct": 2.8167
+        },
+        "DELI": {
+          "sample_count": 1512,
+          "total_actual_sales": 485586.986998,
+          "total_forecast_sales": 489154.10906765785,
+          "mae": 37.7532,
+          "rmse": 52.6061,
+          "wape_pct": 11.7554,
+          "bias_pct": 0.7346
+        },
+        "EGGS": {
+          "sample_count": 1512,
+          "total_actual_sales": 300284.0,
+          "total_forecast_sales": 311228.0761614948,
+          "mae": 34.8542,
+          "rmse": 51.6292,
+          "wape_pct": 17.5499,
+          "bias_pct": 3.6446
+        },
+        "FROZEN FOODS": {
+          "sample_count": 1512,
+          "total_actual_sales": 199563.273036,
+          "total_forecast_sales": 209873.60618421732,
+          "mae": 23.2636,
+          "rmse": 38.1832,
+          "wape_pct": 17.6258,
+          "bias_pct": 5.1664
+        },
+        "GROCERY I": {
+          "sample_count": 1512,
+          "total_actual_sales": 6926246.2299999995,
+          "total_forecast_sales": 7046115.860643284,
+          "mae": 394.2375,
+          "rmse": 554.4675,
+          "wape_pct": 8.6062,
+          "bias_pct": 1.7307
+        },
+        "GROCERY II": {
+          "sample_count": 1512,
+          "total_actual_sales": 46140.0,
+          "total_forecast_sales": 45626.949915058794,
+          "mae": 9.2942,
+          "rmse": 15.3273,
+          "wape_pct": 30.4568,
+          "bias_pct": -1.1119
+        },
+        "HARDWARE": {
+          "sample_count": 1512,
+          "total_actual_sales": 2226.0,
+          "total_forecast_sales": 2344.00081122369,
+          "mae": 1.1081,
+          "rmse": 1.5319,
+          "wape_pct": 75.2704,
+          "bias_pct": 5.301
+        },
+        "HOME AND KITCHEN I": {
+          "sample_count": 1512,
+          "total_actual_sales": 47795.0,
+          "total_forecast_sales": 50156.22789930124,
+          "mae": 11.5462,
+          "rmse": 22.5247,
+          "wape_pct": 36.5267,
+          "bias_pct": 4.9403
+        },
+        "HOME AND KITCHEN II": {
+          "sample_count": 1512,
+          "total_actual_sales": 45587.0,
+          "total_forecast_sales": 45587.26331887336,
+          "mae": 9.6988,
+          "rmse": 27.5711,
+          "wape_pct": 32.1682,
+          "bias_pct": 0.0006
+        },
+        "HOME APPLIANCES": {
+          "sample_count": 1512,
+          "total_actual_sales": 786.0,
+          "total_forecast_sales": 1043.3705287984635,
+          "mae": 0.6432,
+          "rmse": 0.8503,
+          "wape_pct": 123.7349,
+          "bias_pct": 32.7443
+        },
+        "HOME CARE": {
+          "sample_count": 1512,
+          "total_actual_sales": 486667.0,
+          "total_forecast_sales": 461800.0111121702,
+          "mae": 40.5838,
+          "rmse": 63.3691,
+          "wape_pct": 12.6088,
+          "bias_pct": -5.1097
+        },
+        "LADIESWEAR": {
+          "sample_count": 1512,
+          "total_actual_sales": 17925.0,
+          "total_forecast_sales": 18909.539758560648,
+          "mae": 4.1323,
+          "rmse": 6.6832,
+          "wape_pct": 34.8563,
+          "bias_pct": 5.4926
+        },
+        "LAWN AND GARDEN": {
+          "sample_count": 1512,
+          "total_actual_sales": 24626.0,
+          "total_forecast_sales": 26126.238795114456,
+          "mae": 4.8012,
+          "rmse": 7.9116,
+          "wape_pct": 29.4786,
+          "bias_pct": 6.0921
+        },
+        "LINGERIE": {
+          "sample_count": 1512,
+          "total_actual_sales": 10298.0,
+          "total_forecast_sales": 10436.409832754869,
+          "mae": 3.245,
+          "rmse": 4.6919,
+          "wape_pct": 47.6446,
+          "bias_pct": 1.344
+        },
+        "LIQUOR,WINE,BEER": {
+          "sample_count": 1512,
+          "total_actual_sales": 139208.0,
+          "total_forecast_sales": 148733.94165831234,
+          "mae": 25.7398,
+          "rmse": 48.2345,
+          "wape_pct": 27.9571,
+          "bias_pct": 6.843
+        },
+        "MAGAZINES": {
+          "sample_count": 1512,
+          "total_actual_sales": 8532.0,
+          "total_forecast_sales": 9162.189713961845,
+          "mae": 2.3485,
+          "rmse": 3.5794,
+          "wape_pct": 41.6189,
+          "bias_pct": 7.3862
+        },
+        "MEATS": {
+          "sample_count": 1512,
+          "total_actual_sales": 574636.408095,
+          "total_forecast_sales": 585058.8986549547,
+          "mae": 45.93,
+          "rmse": 73.7508,
+          "wape_pct": 12.0852,
+          "bias_pct": 1.8138
+        },
+        "PERSONAL CARE": {
+          "sample_count": 1512,
+          "total_actual_sales": 462630.0,
+          "total_forecast_sales": 477259.6842917654,
+          "mae": 43.4923,
+          "rmse": 66.6889,
+          "wape_pct": 14.2145,
+          "bias_pct": 3.1623
+        },
+        "PET SUPPLIES": {
+          "sample_count": 1512,
+          "total_actual_sales": 13673.0,
+          "total_forecast_sales": 14221.70567138344,
+          "mae": 2.9105,
+          "rmse": 4.6087,
+          "wape_pct": 32.1848,
+          "bias_pct": 4.0131
+        },
+        "PLAYERS AND ELECTRONICS": {
+          "sample_count": 1512,
+          "total_actual_sales": 17319.0,
+          "total_forecast_sales": 17573.662205102242,
+          "mae": 3.4606,
+          "rmse": 4.9613,
+          "wape_pct": 30.2119,
+          "bias_pct": 1.4704
+        },
+        "POULTRY": {
+          "sample_count": 1512,
+          "total_actual_sales": 598874.930845,
+          "total_forecast_sales": 607960.4544557284,
+          "mae": 43.6785,
+          "rmse": 75.7827,
+          "wape_pct": 11.0277,
+          "bias_pct": 1.5171
+        },
+        "PREPARED FOODS": {
+          "sample_count": 1512,
+          "total_actual_sales": 136838.15396899998,
+          "total_forecast_sales": 139019.1003268124,
+          "mae": 14.934,
+          "rmse": 21.694,
+          "wape_pct": 16.5014,
+          "bias_pct": 1.5938
+        },
+        "PRODUCE": {
+          "sample_count": 1512,
+          "total_actual_sales": 3635620.9880399997,
+          "total_forecast_sales": 3705107.064093568,
+          "mae": 173.9121,
+          "rmse": 260.5643,
+          "wape_pct": 7.2327,
+          "bias_pct": 1.9113
+        },
+        "SCHOOL AND OFFICE SUPPLIES": {
+          "sample_count": 1512,
+          "total_actual_sales": 2055.0,
+          "total_forecast_sales": 2428.3617651875606,
+          "mae": 0.9534,
+          "rmse": 1.609,
+          "wape_pct": 70.1505,
+          "bias_pct": 18.1685
+        },
+        "SEAFOOD": {
+          "sample_count": 1512,
+          "total_actual_sales": 31718.507989799997,
+          "total_forecast_sales": 31647.205775321207,
+          "mae": 5.1016,
+          "rmse": 8.4651,
+          "wape_pct": 24.3189,
+          "bias_pct": -0.2248
+        }
+      }
+    },
+    "holdout": {
+      "seasonal_naive": {
+        "sample_count": 49896,
+        "total_actual_sales": 23436867.5715508,
+        "total_forecast_sales": 23805393.740398303,
+        "mae": 86.9272,
+        "rmse": 313.8271,
+        "wape_pct": 18.5064,
+        "bias_pct": 1.5724
+      },
+      "random_forest": {
+        "sample_count": 49896,
+        "total_actual_sales": 23436867.5715508,
+        "total_forecast_sales": 23724240.92254141,
+        "mae": 60.4495,
+        "rmse": 209.0344,
+        "wape_pct": 12.8694,
+        "bias_pct": 1.2262
+      },
+      "by_family_rf": {
+        "AUTOMOTIVE": {
+          "sample_count": 1512,
+          "total_actual_sales": 11066.0,
+          "total_forecast_sales": 11155.706816209233,
+          "mae": 2.8222,
+          "rmse": 3.7845,
+          "wape_pct": 38.5608,
+          "bias_pct": 0.8107
+        },
+        "BABY CARE": {
+          "sample_count": 1512,
+          "total_actual_sales": 270.0,
+          "total_forecast_sales": 701.8830675117504,
+          "mae": 0.4897,
+          "rmse": 1.5425,
+          "wape_pct": 274.2269,
+          "bias_pct": 159.9567
+        },
+        "BEAUTY": {
+          "sample_count": 1512,
+          "total_actual_sales": 9242.0,
+          "total_forecast_sales": 8845.093931537787,
+          "mae": 2.2446,
+          "rmse": 3.2617,
+          "wape_pct": 36.7214,
+          "bias_pct": -4.2946
+        },
+        "BEVERAGES": {
+          "sample_count": 1512,
+          "total_actual_sales": 5351857.0,
+          "total_forecast_sales": 5419648.336342419,
+          "mae": 494.3256,
+          "rmse": 737.9636,
+          "wape_pct": 13.9656,
+          "bias_pct": 1.2667
+        },
+        "BOOKS": {
+          "sample_count": 1512,
+          "total_actual_sales": 22.0,
+          "total_forecast_sales": 804.1980728859448,
+          "mae": 0.541,
+          "rmse": 3.123,
+          "wape_pct": 3718.4059,
+          "bias_pct": 3555.4458
+        },
+        "BREAD/BAKERY": {
+          "sample_count": 1512,
+          "total_actual_sales": 807316.46493,
+          "total_forecast_sales": 821710.9053362426,
+          "mae": 55.0597,
+          "rmse": 87.6175,
+          "wape_pct": 10.312,
+          "bias_pct": 1.783
+        },
+        "CELEBRATION": {
+          "sample_count": 1512,
+          "total_actual_sales": 19919.0,
+          "total_forecast_sales": 20323.723845175708,
+          "mae": 5.5688,
+          "rmse": 12.3662,
+          "wape_pct": 42.2711,
+          "bias_pct": 2.0318
+        },
+        "CLEANING": {
+          "sample_count": 1512,
+          "total_actual_sales": 1937756.0,
+          "total_forecast_sales": 1947017.6669926476,
+          "mae": 278.4063,
+          "rmse": 517.3167,
+          "wape_pct": 21.7236,
+          "bias_pct": 0.478
+        },
+        "DAIRY": {
+          "sample_count": 1512,
+          "total_actual_sales": 1271565.0,
+          "total_forecast_sales": 1315774.6986832947,
+          "mae": 79.4434,
+          "rmse": 119.5592,
+          "wape_pct": 9.4465,
+          "bias_pct": 3.4768
+        },
+        "DELI": {
+          "sample_count": 1512,
+          "total_actual_sales": 459104.13601,
+          "total_forecast_sales": 474830.9931291051,
+          "mae": 37.7628,
+          "rmse": 52.1514,
+          "wape_pct": 12.4367,
+          "bias_pct": 3.4256
+        },
+        "EGGS": {
+          "sample_count": 1512,
+          "total_actual_sales": 297322.0,
+          "total_forecast_sales": 302758.77897433884,
+          "mae": 33.0579,
+          "rmse": 55.8054,
+          "wape_pct": 16.8112,
+          "bias_pct": 1.8286
+        },
+        "FROZEN FOODS": {
+          "sample_count": 1512,
+          "total_actual_sales": 196098.973,
+          "total_forecast_sales": 200125.1265156353,
+          "mae": 22.7522,
+          "rmse": 34.7179,
+          "wape_pct": 17.5429,
+          "bias_pct": 2.0531
+        },
+        "GROCERY I": {
+          "sample_count": 1512,
+          "total_actual_sales": 6905845.155,
+          "total_forecast_sales": 6894828.6860678885,
+          "mae": 465.1029,
+          "rmse": 681.9112,
+          "wape_pct": 10.1832,
+          "bias_pct": -0.1595
+        },
+        "GROCERY II": {
+          "sample_count": 1512,
+          "total_actual_sales": 49884.0,
+          "total_forecast_sales": 51376.10946681714,
+          "mae": 11.6188,
+          "rmse": 19.5802,
+          "wape_pct": 35.217,
+          "bias_pct": 2.9912
+        },
+        "HARDWARE": {
+          "sample_count": 1512,
+          "total_actual_sales": 2195.0,
+          "total_forecast_sales": 2348.1158000823016,
+          "mae": 1.1406,
+          "rmse": 1.6151,
+          "wape_pct": 78.5688,
+          "bias_pct": 6.9757
+        },
+        "HOME AND KITCHEN I": {
+          "sample_count": 1512,
+          "total_actual_sales": 46658.0,
+          "total_forecast_sales": 46347.63345317602,
+          "mae": 10.5019,
+          "rmse": 16.5405,
+          "wape_pct": 34.0325,
+          "bias_pct": -0.6652
+        },
+        "HOME AND KITCHEN II": {
+          "sample_count": 1512,
+          "total_actual_sales": 47049.0,
+          "total_forecast_sales": 45924.906226938045,
+          "mae": 11.4302,
+          "rmse": 29.0684,
+          "wape_pct": 36.7327,
+          "bias_pct": -2.3892
+        },
+        "HOME APPLIANCES": {
+          "sample_count": 1512,
+          "total_actual_sales": 343.0,
+          "total_forecast_sales": 696.5156427885854,
+          "mae": 0.4921,
+          "rmse": 0.7019,
+          "wape_pct": 216.9097,
+          "bias_pct": 103.0658
+        },
+        "HOME CARE": {
+          "sample_count": 1512,
+          "total_actual_sales": 462187.0,
+          "total_forecast_sales": 477683.92281657463,
+          "mae": 50.5302,
+          "rmse": 76.3134,
+          "wape_pct": 16.5305,
+          "bias_pct": 3.353
+        },
+        "LADIESWEAR": {
+          "sample_count": 1512,
+          "total_actual_sales": 16372.0,
+          "total_forecast_sales": 17727.942576769958,
+          "mae": 3.9979,
+          "rmse": 6.3541,
+          "wape_pct": 36.922,
+          "bias_pct": 8.2821
+        },
+        "LAWN AND GARDEN": {
+          "sample_count": 1512,
+          "total_actual_sales": 23665.0,
+          "total_forecast_sales": 24787.634340444984,
+          "mae": 4.8023,
+          "rmse": 7.6732,
+          "wape_pct": 30.6829,
+          "bias_pct": 4.7439
+        },
+        "LINGERIE": {
+          "sample_count": 1512,
+          "total_actual_sales": 10619.0,
+          "total_forecast_sales": 10392.667791884815,
+          "mae": 3.5534,
+          "rmse": 5.8397,
+          "wape_pct": 50.5953,
+          "bias_pct": -2.1314
+        },
+        "LIQUOR,WINE,BEER": {
+          "sample_count": 1512,
+          "total_actual_sales": 151593.0,
+          "total_forecast_sales": 148680.74364284516,
+          "mae": 28.016,
+          "rmse": 51.5755,
+          "wape_pct": 27.9433,
+          "bias_pct": -1.9211
+        },
+        "MAGAZINES": {
+          "sample_count": 1512,
+          "total_actual_sales": 10446.0,
+          "total_forecast_sales": 9929.08472892603,
+          "mae": 2.4981,
+          "rmse": 3.9949,
+          "wape_pct": 36.159,
+          "bias_pct": -4.9485
+        },
+        "MEATS": {
+          "sample_count": 1512,
+          "total_actual_sales": 569872.324645,
+          "total_forecast_sales": 579295.0007230386,
+          "mae": 51.1835,
+          "rmse": 81.7476,
+          "wape_pct": 13.5801,
+          "bias_pct": 1.6535
+        },
+        "PERSONAL CARE": {
+          "sample_count": 1512,
+          "total_actual_sales": 478404.0,
+          "total_forecast_sales": 469382.5088987848,
+          "mae": 50.5816,
+          "rmse": 88.449,
+          "wape_pct": 15.9864,
+          "bias_pct": -1.8857
+        },
+        "PET SUPPLIES": {
+          "sample_count": 1512,
+          "total_actual_sales": 12658.0,
+          "total_forecast_sales": 13067.179574414826,
+          "mae": 2.7145,
+          "rmse": 4.1042,
+          "wape_pct": 32.4246,
+          "bias_pct": 3.2326
+        },
+        "PLAYERS AND ELECTRONICS": {
+          "sample_count": 1512,
+          "total_actual_sales": 17497.0,
+          "total_forecast_sales": 17662.278168840614,
+          "mae": 3.4801,
+          "rmse": 4.7514,
+          "wape_pct": 30.0735,
+          "bias_pct": 0.9446
+        },
+        "POULTRY": {
+          "sample_count": 1512,
+          "total_actual_sales": 576592.339929,
+          "total_forecast_sales": 596353.0185208576,
+          "mae": 46.9965,
+          "rmse": 86.2123,
+          "wape_pct": 12.3239,
+          "bias_pct": 3.4271
+        },
+        "PREPARED FOODS": {
+          "sample_count": 1512,
+          "total_actual_sales": 133240.360039,
+          "total_forecast_sales": 134515.87108731284,
+          "mae": 14.4542,
+          "rmse": 20.3114,
+          "wape_pct": 16.4026,
+          "bias_pct": 0.9573
+        },
+        "PRODUCE": {
+          "sample_count": 1512,
+          "total_actual_sales": 3472465.8119599996,
+          "total_forecast_sales": 3585674.5265884995,
+          "mae": 198.5669,
+          "rmse": 314.7571,
+          "wape_pct": 8.6461,
+          "bias_pct": 3.2602
+        },
+        "SCHOOL AND OFFICE SUPPLIES": {
+          "sample_count": 1512,
+          "total_actual_sales": 57594.0,
+          "total_forecast_sales": 42623.08749571607,
+          "mae": 15.9871,
+          "rmse": 62.3094,
+          "wape_pct": 41.9705,
+          "bias_pct": -25.9939
+        },
+        "SEAFOOD": {
+          "sample_count": 1512,
+          "total_actual_sales": 30149.006037799998,
+          "total_forecast_sales": 31246.377221807383,
+          "mae": 4.7105,
+          "rmse": 7.3158,
+          "wape_pct": 23.6237,
+          "bias_pct": 3.6398
+        }
+      }
+    }
+  },
+  "mode_b_fixed_origin_recursive": {
+    "forecast_origin": "2017-07-18",
+    "horizon_days": 14,
+    "seasonal_naive": {
+      "sample_count": 24948,
+      "total_actual_sales": 11992072.393977301,
+      "total_forecast_sales": 11524562.062837001,
+      "mae": 73.1025,
+      "rmse": 277.2676,
+      "wape_pct": 15.2081,
+      "bias_pct": -3.8985
+    },
+    "random_forest": {
+      "sample_count": 24948,
+      "total_actual_sales": 11992072.393977301,
+      "total_forecast_sales": 11597659.629120078,
+      "mae": 60.3254,
+      "rmse": 221.2987,
+      "wape_pct": 12.55,
+      "bias_pct": -3.2889
+    },
+    "by_horizon_rf": {
+      "1": {
+        "sample_count": 1782,
+        "total_actual_sales": 767978.7780780001,
+        "total_forecast_sales": 770412.5050939703,
+        "mae": 41.5686,
+        "rmse": 138.8579,
+        "wape_pct": 9.6455,
+        "bias_pct": 0.3169
+      },
+      "2": {
+        "sample_count": 1782,
+        "total_actual_sales": 688288.067857,
+        "total_forecast_sales": 661359.5022074835,
+        "mae": 43.4753,
+        "rmse": 147.1002,
+        "wape_pct": 11.2559,
+        "bias_pct": -3.9124
+      },
+      "3": {
+        "sample_count": 1782,
+        "total_actual_sales": 782418.2992187999,
+        "total_forecast_sales": 766431.2043869921,
+        "mae": 48.7568,
+        "rmse": 168.8118,
+        "wape_pct": 11.1046,
+        "bias_pct": -2.0433
+      },
+      "4": {
+        "sample_count": 1782,
+        "total_actual_sales": 932902.046681,
+        "total_forecast_sales": 964571.0043273757,
+        "mae": 58.0389,
+        "rmse": 187.3437,
+        "wape_pct": 11.0864,
+        "bias_pct": 3.3947
+      },
+      "5": {
+        "sample_count": 1782,
+        "total_actual_sales": 1024288.741245,
+        "total_forecast_sales": 1050787.9892930589,
+        "mae": 72.3539,
+        "rmse": 220.139,
+        "wape_pct": 12.5877,
+        "bias_pct": 2.5871
+      },
+      "6": {
+        "sample_count": 1782,
+        "total_actual_sales": 816564.3270960001,
+        "total_forecast_sales": 784472.2453100458,
+        "mae": 50.5555,
+        "rmse": 162.1551,
+        "wape_pct": 11.0328,
+        "bias_pct": -3.9301
+      },
+      "7": {
+        "sample_count": 1782,
+        "total_actual_sales": 713581.632609,
+        "total_forecast_sales": 725792.4239675389,
+        "mae": 42.5207,
+        "rmse": 127.0536,
+        "wape_pct": 10.6185,
+        "bias_pct": 1.7112
+      },
+      "8": {
+        "sample_count": 1782,
+        "total_actual_sales": 740653.044167,
+        "total_forecast_sales": 746811.8223427121,
+        "mae": 48.3414,
+        "rmse": 152.5376,
+        "wape_pct": 11.6309,
+        "bias_pct": 0.8315
+      },
+      "9": {
+        "sample_count": 1782,
+        "total_actual_sales": 659849.8270588,
+        "total_forecast_sales": 650008.7910550793,
+        "mae": 53.6889,
+        "rmse": 237.5513,
+        "wape_pct": 14.4993,
+        "bias_pct": -1.4914
+      },
+      "10": {
+        "sample_count": 1782,
+        "total_actual_sales": 835099.6822035001,
+        "total_forecast_sales": 766917.319458425,
+        "mae": 62.567,
+        "rmse": 229.054,
+        "wape_pct": 13.351,
+        "bias_pct": -8.1646
+      },
+      "11": {
+        "sample_count": 1782,
+        "total_actual_sales": 1032310.8657369999,
+        "total_forecast_sales": 985126.0121139355,
+        "mae": 76.6547,
+        "rmse": 278.9672,
+        "wape_pct": 13.2323,
+        "bias_pct": -4.5708
+      },
+      "12": {
+        "sample_count": 1782,
+        "total_actual_sales": 1123752.4779517,
+        "total_forecast_sales": 1066456.8431234746,
+        "mae": 86.7271,
+        "rmse": 328.4563,
+        "wape_pct": 13.7528,
+        "bias_pct": -5.0986
+      },
+      "13": {
+        "sample_count": 1782,
+        "total_actual_sales": 885856.8408705001,
+        "total_forecast_sales": 806755.5080671757,
+        "mae": 68.7325,
+        "rmse": 254.5656,
+        "wape_pct": 13.8263,
+        "bias_pct": -8.9294
+      },
+      "14": {
+        "sample_count": 1782,
+        "total_actual_sales": 988527.763204,
+        "total_forecast_sales": 851756.4583728111,
+        "mae": 90.575,
+        "rmse": 327.9277,
+        "wape_pct": 16.3278,
+        "bias_pct": -13.8359
+      }
+    },
+    "by_horizon_naive": {
+      "1": {
+        "sample_count": 1782,
+        "total_actual_sales": 767978.7780780001,
+        "total_forecast_sales": 748799.9959086999,
+        "mae": 50.3787,
+        "rmse": 191.1953,
+        "wape_pct": 11.6898,
+        "bias_pct": -2.4973
+      },
+      "2": {
+        "sample_count": 1782,
+        "total_actual_sales": 688288.067857,
+        "total_forecast_sales": 629651.3629295,
+        "mae": 62.4697,
+        "rmse": 210.3616,
+        "wape_pct": 16.1736,
+        "bias_pct": -8.5192
+      },
+      "3": {
+        "sample_count": 1782,
+        "total_actual_sales": 782418.2992187999,
+        "total_forecast_sales": 765489.6173932999,
+        "mae": 56.6877,
+        "rmse": 242.1965,
+        "wape_pct": 12.9109,
+        "bias_pct": -2.1636
+      },
+      "4": {
+        "sample_count": 1782,
+        "total_actual_sales": 932902.046681,
+        "total_forecast_sales": 969077.125075,
+        "mae": 66.508,
+        "rmse": 270.5304,
+        "wape_pct": 12.7041,
+        "bias_pct": 3.8777
+      },
+      "5": {
+        "sample_count": 1782,
+        "total_actual_sales": 1024288.741245,
+        "total_forecast_sales": 1100803.699023,
+        "mae": 84.4106,
+        "rmse": 271.5311,
+        "wape_pct": 14.6853,
+        "bias_pct": 7.4701
+      },
+      "6": {
+        "sample_count": 1782,
+        "total_actual_sales": 816564.3270960001,
+        "total_forecast_sales": 818325.5221490001,
+        "mae": 64.3944,
+        "rmse": 206.7085,
+        "wape_pct": 14.0529,
+        "bias_pct": 0.2157
+      },
+      "7": {
+        "sample_count": 1782,
+        "total_actual_sales": 713581.632609,
+        "total_forecast_sales": 730133.70894,
+        "mae": 49.0604,
+        "rmse": 165.5516,
+        "wape_pct": 12.2517,
+        "bias_pct": 2.3196
+      },
+      "8": {
+        "sample_count": 1782,
+        "total_actual_sales": 740653.044167,
+        "total_forecast_sales": 748799.9959086999,
+        "mae": 51.2119,
+        "rmse": 160.9362,
+        "wape_pct": 12.3215,
+        "bias_pct": 1.1
+      },
+      "9": {
+        "sample_count": 1782,
+        "total_actual_sales": 659849.8270588,
+        "total_forecast_sales": 629651.3629295,
+        "mae": 62.9059,
+        "rmse": 254.82,
+        "wape_pct": 16.9885,
+        "bias_pct": -4.5766
+      },
+      "10": {
+        "sample_count": 1782,
+        "total_actual_sales": 835099.6822035001,
+        "total_forecast_sales": 765489.6173932999,
+        "mae": 76.08,
+        "rmse": 301.6943,
+        "wape_pct": 16.2345,
+        "bias_pct": -8.3355
+      },
+      "11": {
+        "sample_count": 1782,
+        "total_actual_sales": 1032310.8657369999,
+        "total_forecast_sales": 969077.125075,
+        "mae": 85.9936,
+        "rmse": 351.947,
+        "wape_pct": 14.8444,
+        "bias_pct": -6.1255
+      },
+      "12": {
+        "sample_count": 1782,
+        "total_actual_sales": 1123752.4779517,
+        "total_forecast_sales": 1100803.699023,
+        "mae": 86.8734,
+        "rmse": 325.5398,
+        "wape_pct": 13.776,
+        "bias_pct": -2.0422
+      },
+      "13": {
+        "sample_count": 1782,
+        "total_actual_sales": 885856.8408705001,
+        "total_forecast_sales": 818325.5221490001,
+        "mae": 72.2,
+        "rmse": 257.0208,
+        "wape_pct": 14.5238,
+        "bias_pct": -7.6233
+      },
+      "14": {
+        "sample_count": 1782,
+        "total_actual_sales": 988527.763204,
+        "total_forecast_sales": 730133.70894,
+        "mae": 154.2606,
+        "rmse": 491.9439,
+        "wape_pct": 27.8083,
+        "bias_pct": -26.1393
+      }
+    },
+    "by_family_rf": {
+      "AUTOMOTIVE": {
+        "sample_count": 756,
+        "total_actual_sales": 5500.0,
+        "total_forecast_sales": 5391.823853409282,
+        "mae": 2.76,
+        "rmse": 3.7846,
+        "wape_pct": 37.9379,
+        "bias_pct": -1.9668
+      },
+      "BABY CARE": {
+        "sample_count": 756,
+        "total_actual_sales": 139.0,
+        "total_forecast_sales": 1435.019469332894,
+        "mae": 1.8988,
+        "rmse": 3.1885,
+        "wape_pct": 1032.722,
+        "bias_pct": 932.3881
+      },
+      "BEAUTY": {
+        "sample_count": 756,
+        "total_actual_sales": 4085.0,
+        "total_forecast_sales": 4229.787858815175,
+        "mae": 2.0576,
+        "rmse": 2.8307,
+        "wape_pct": 38.0796,
+        "bias_pct": 3.5444
+      },
+      "BEVERAGES": {
+        "sample_count": 756,
+        "total_actual_sales": 2757500.0,
+        "total_forecast_sales": 2644506.206002108,
+        "mae": 451.4558,
+        "rmse": 680.5185,
+        "wape_pct": 12.3772,
+        "bias_pct": -4.0977
+      },
+      "BOOKS": {
+        "sample_count": 756,
+        "total_actual_sales": 14.0,
+        "total_forecast_sales": 2932.020480146177,
+        "mae": 3.8678,
+        "rmse": 6.6538,
+        "wape_pct": 20886.1466,
+        "bias_pct": 20843.0034
+      },
+      "BREAD/BAKERY": {
+        "sample_count": 756,
+        "total_actual_sales": 401978.40402,
+        "total_forecast_sales": 413539.99071505526,
+        "mae": 51.6656,
+        "rmse": 75.6947,
+        "wape_pct": 9.7167,
+        "bias_pct": 2.8762
+      },
+      "CELEBRATION": {
+        "sample_count": 756,
+        "total_actual_sales": 10299.0,
+        "total_forecast_sales": 10091.234915009903,
+        "mae": 5.6575,
+        "rmse": 15.2386,
+        "wape_pct": 41.529,
+        "bias_pct": -2.0173
+      },
+      "CLEANING": {
+        "sample_count": 756,
+        "total_actual_sales": 1065793.0,
+        "total_forecast_sales": 923702.7508209529,
+        "mae": 337.4936,
+        "rmse": 720.4916,
+        "wape_pct": 23.9395,
+        "bias_pct": -13.3319
+      },
+      "DAIRY": {
+        "sample_count": 756,
+        "total_actual_sales": 645789.0,
+        "total_forecast_sales": 667040.8410951158,
+        "mae": 78.3086,
+        "rmse": 119.8097,
+        "wape_pct": 9.1673,
+        "bias_pct": 3.2908
+      },
+      "DELI": {
+        "sample_count": 756,
+        "total_actual_sales": 232592.767006,
+        "total_forecast_sales": 237762.4546928928,
+        "mae": 35.6492,
+        "rmse": 48.5484,
+        "wape_pct": 11.5871,
+        "bias_pct": 2.2226
+      },
+      "EGGS": {
+        "sample_count": 756,
+        "total_actual_sales": 151681.0,
+        "total_forecast_sales": 150855.50260571184,
+        "mae": 33.2987,
+        "rmse": 59.9572,
+        "wape_pct": 16.5966,
+        "bias_pct": -0.5442
+      },
+      "FROZEN FOODS": {
+        "sample_count": 756,
+        "total_actual_sales": 98162.15801099999,
+        "total_forecast_sales": 99120.6429633674,
+        "mae": 21.0935,
+        "rmse": 31.094,
+        "wape_pct": 16.2453,
+        "bias_pct": 0.9764
+      },
+      "GROCERY I": {
+        "sample_count": 756,
+        "total_actual_sales": 3497101.829,
+        "total_forecast_sales": 3318674.622232055,
+        "mae": 470.5179,
+        "rmse": 703.0054,
+        "wape_pct": 10.1716,
+        "bias_pct": -5.1021
+      },
+      "GROCERY II": {
+        "sample_count": 756,
+        "total_actual_sales": 28619.0,
+        "total_forecast_sales": 24747.41396292673,
+        "mae": 13.2574,
+        "rmse": 24.3581,
+        "wape_pct": 35.0207,
+        "bias_pct": -13.528
+      },
+      "HARDWARE": {
+        "sample_count": 756,
+        "total_actual_sales": 1110.0,
+        "total_forecast_sales": 1188.6523337673557,
+        "mae": 1.2096,
+        "rmse": 1.6858,
+        "wape_pct": 82.3839,
+        "bias_pct": 7.0858
+      },
+      "HOME AND KITCHEN I": {
+        "sample_count": 756,
+        "total_actual_sales": 22614.0,
+        "total_forecast_sales": 23376.075259391906,
+        "mae": 10.8554,
+        "rmse": 16.6217,
+        "wape_pct": 36.2901,
+        "bias_pct": 3.3699
+      },
+      "HOME AND KITCHEN II": {
+        "sample_count": 756,
+        "total_actual_sales": 23917.0,
+        "total_forecast_sales": 21613.231989732798,
+        "mae": 10.8806,
+        "rmse": 31.6729,
+        "wape_pct": 34.3929,
+        "bias_pct": -9.6323
+      },
+      "HOME APPLIANCES": {
+        "sample_count": 756,
+        "total_actual_sales": 206.0,
+        "total_forecast_sales": 564.5513623992397,
+        "mae": 0.7362,
+        "rmse": 0.9176,
+        "wape_pct": 270.1898,
+        "bias_pct": 174.0541
+      },
+      "HOME CARE": {
+        "sample_count": 756,
+        "total_actual_sales": 251399.0,
+        "total_forecast_sales": 233828.5914378023,
+        "mae": 53.394,
+        "rmse": 84.1906,
+        "wape_pct": 16.0565,
+        "bias_pct": -6.9891
+      },
+      "LADIESWEAR": {
+        "sample_count": 756,
+        "total_actual_sales": 8690.0,
+        "total_forecast_sales": 9668.39451415672,
+        "mae": 4.8477,
+        "rmse": 6.9251,
+        "wape_pct": 42.1737,
+        "bias_pct": 11.2589
+      },
+      "LAWN AND GARDEN": {
+        "sample_count": 756,
+        "total_actual_sales": 12031.0,
+        "total_forecast_sales": 13259.73450182028,
+        "mae": 5.6985,
+        "rmse": 7.9513,
+        "wape_pct": 35.808,
+        "bias_pct": 10.2131
+      },
+      "LINGERIE": {
+        "sample_count": 756,
+        "total_actual_sales": 4688.0,
+        "total_forecast_sales": 5085.695028909273,
+        "mae": 3.2908,
+        "rmse": 4.4357,
+        "wape_pct": 53.0682,
+        "bias_pct": 8.4833
+      },
+      "LIQUOR,WINE,BEER": {
+        "sample_count": 756,
+        "total_actual_sales": 74000.0,
+        "total_forecast_sales": 71248.95170259071,
+        "mae": 26.9302,
+        "rmse": 45.1772,
+        "wape_pct": 27.5125,
+        "bias_pct": -3.7176
+      },
+      "MAGAZINES": {
+        "sample_count": 756,
+        "total_actual_sales": 4820.0,
+        "total_forecast_sales": 4661.131519181243,
+        "mae": 2.2058,
+        "rmse": 3.258,
+        "wape_pct": 34.5979,
+        "bias_pct": -3.296
+      },
+      "MEATS": {
+        "sample_count": 756,
+        "total_actual_sales": 287995.525182,
+        "total_forecast_sales": 284393.27015203604,
+        "mae": 46.4494,
+        "rmse": 73.6813,
+        "wape_pct": 12.1931,
+        "bias_pct": -1.2508
+      },
+      "PERSONAL CARE": {
+        "sample_count": 756,
+        "total_actual_sales": 242276.0,
+        "total_forecast_sales": 222606.56760054087,
+        "mae": 53.2711,
+        "rmse": 95.2456,
+        "wape_pct": 16.6228,
+        "bias_pct": -8.1186
+      },
+      "PET SUPPLIES": {
+        "sample_count": 756,
+        "total_actual_sales": 6249.0,
+        "total_forecast_sales": 6631.853072797306,
+        "mae": 2.6058,
+        "rmse": 3.8062,
+        "wape_pct": 31.5252,
+        "bias_pct": 6.1266
+      },
+      "PLAYERS AND ELECTRONICS": {
+        "sample_count": 756,
+        "total_actual_sales": 8654.0,
+        "total_forecast_sales": 8679.675500462763,
+        "mae": 3.5463,
+        "rmse": 4.9033,
+        "wape_pct": 30.9798,
+        "bias_pct": 0.2967
+      },
+      "POULTRY": {
+        "sample_count": 756,
+        "total_actual_sales": 294534.14803499996,
+        "total_forecast_sales": 296403.959571333,
+        "mae": 44.0914,
+        "rmse": 68.0579,
+        "wape_pct": 11.3172,
+        "bias_pct": 0.6348
+      },
+      "PREPARED FOODS": {
+        "sample_count": 756,
+        "total_actual_sales": 66685.620006,
+        "total_forecast_sales": 67128.03718473256,
+        "mae": 14.423,
+        "rmse": 20.2895,
+        "wape_pct": 16.351,
+        "bias_pct": 0.6634
+      },
+      "PRODUCE": {
+        "sample_count": 756,
+        "total_actual_sales": 1757766.7557,
+        "total_forecast_sales": 1805527.0354982354,
+        "mae": 178.4465,
+        "rmse": 277.1214,
+        "wape_pct": 7.6748,
+        "bias_pct": 2.7171
+      },
+      "SCHOOL AND OFFICE SUPPLIES": {
+        "sample_count": 756,
+        "total_actual_sales": 10089.0,
+        "total_forecast_sales": 2071.508640970469,
+        "mae": 14.1581,
+        "rmse": 69.2187,
+        "wape_pct": 106.091,
+        "bias_pct": -79.4677
+      },
+      "SEAFOOD": {
+        "sample_count": 756,
+        "total_actual_sales": 15093.1870173,
+        "total_forecast_sales": 15692.400582319966,
+        "mae": 4.7173,
+        "rmse": 7.3483,
+        "wape_pct": 23.6282,
+        "bias_pct": 3.9701
+      }
+    }
+  }
+}
