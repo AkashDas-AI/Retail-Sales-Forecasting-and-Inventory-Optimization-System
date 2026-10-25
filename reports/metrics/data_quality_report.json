@@ -1,0 +1,32 @@
+{
+  "input_filename": "train.csv",
+  "input_row_count": 3000888,
+  "output_row_count": 3000888,
+  "date_range": {
+    "min_date": "2013-01-01",
+    "max_date": "2017-08-15"
+  },
+  "store_count": 54,
+  "family_count": 33,
+  "duplicate_key_count": 0,
+  "missing_values_by_column": {
+    "id": 0,
+    "date": 0,
+    "store_nbr": 0,
+    "family": 0,
+    "sales": 0,
+    "onpromotion": 0
+  },
+  "invalid_value_counts": {},
+  "transformations_performed": [
+    "Normalized 'date' column to datetime (YYYY-MM-DD format).",
+    "Normalized 'onpromotion' to nullable integer (Int64), strictly preserving unobserved/missing values.",
+    "Sorted deterministically by modeling grain: ['date', 'store_nbr', 'family']."
+  ],
+  "warnings_and_limitations": [
+    "Missing dates between first and last observed dates are NOT zero-filled.",
+    "Cartesian expansion (Store x Family x Date) intentionally omitted to prevent artificial zero-sales bias.",
+    "Store openings, closures, and assortment eligibility require secondary verification before grid construction.",
+    "Missing 'onpromotion' values are preserved as unobserved (<NA>); no automatic zero-imputation applied."
+  ]
+}

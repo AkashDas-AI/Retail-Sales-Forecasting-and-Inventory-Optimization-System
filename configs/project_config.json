@@ -1,0 +1,36 @@
+{
+  "_comment": "Project-wide execution configuration and pipeline settings. All thresholds and dates are configurable assumptions.",
+  "project_name": "Retail Sales Forecasting & Inventory Optimization System",
+  "version": "0.1.0",
+  "random_seed": 42,
+  "data_paths": {
+    "raw_dir": "data/raw",
+    "raw_sales_file": "data/raw/train.csv",
+    "interim_dir": "data/interim",
+    "processed_dir": "data/processed",
+    "processed_sales_file": "data/processed/sales_daily.csv",
+    "processed_features_file": "data/processed/sales_features.csv",
+    "sample_dir": "data/sample"
+  },
+  "preprocessing": {
+    "preserve_missing_promotions": true
+  },
+  "modeling": {
+    "forecast_horizon_days": 14,
+    "validation_window_days": 28,
+    "test_window_days": 28,
+    "lag_features": [1, 7, 14, 28],
+    "rolling_windows": [7, 14, 30],
+    "quantiles": [0.1, 0.5, 0.9]
+  },
+  "outputs": {
+    "forecasts_dir": "outputs/forecasts",
+    "recommendations_dir": "outputs/recommendations",
+    "simulation_dir": "outputs/simulation",
+    "models_dir": "models",
+    "metrics_dir": "reports/metrics",
+    "data_quality_report_file": "reports/metrics/data_quality_report.json",
+    "feature_engineering_report_file": "reports/metrics/feature_engineering_report.json",
+    "forecast_evaluation_report_file": "reports/metrics/forecast_evaluation_report.json"
+  }
+}
