@@ -1,0 +1,278 @@
+{
+  "report_type": "inventory_simulation_and_policy_comparison_report",
+  "timestamp_generated": "2026-10-26T02:23:36.483200",
+  "simulation_horizon": {
+    "start_date": "2017-07-19",
+    "end_date": "2017-08-15",
+    "duration_days": 28,
+    "partition": "holdout"
+  },
+  "evaluation_scope": {
+    "evaluated_series_count": 50,
+    "selection_strategy": "representative_archetypes",
+    "all_balances_reconciled": true,
+    "reconciled_series_ratio": "50/50"
+  },
+  "configured_simulation_parameters": {
+    "lead_time_days": 7,
+    "annual_holding_cost_rate": 0.2,
+    "unit_cost_usd": 10.0,
+    "daily_holding_cost_per_unit_usd": 0.00547945,
+    "order_cost_usd": 50.0,
+    "shortage_penalty_per_unit_usd": 15.0,
+    "backlog_allowed": false
+  },
+  "data_provenance_and_limitations": {
+    "demand_proxy": "Observed historical sales in final holdout (unconstrained demand is censored during historical stockouts)",
+    "on_hand_inventory": "Simulated initial inventory assumption (14 days of supply)",
+    "holding_and_ordering_costs": "Configured baseline financial assumptions",
+    "shortage_penalty": "Synthetic penalty rate assumption ($15.00/unit; not observed retailer cost)",
+    "autocorrelation_inflation": "Configured assumption (rho_1=0.25; validation 1-step autocorr is ~0.0014)",
+    "retrospective_evaluation": "Holdout results represent retrospective evaluation; policy parameters were calibrated on validation partition without holdout tuning."
+  },
+  "policy_comparison_summary": {
+    "baseline_policy": {
+      "policy_name": "Baseline_Fixed_Weekly",
+      "volume_weighted_fill_rate": 97.65,
+      "macro_average_fill_rate": 94.47,
+      "aggregate_fill_rate": 97.65,
+      "total_stockout_days": 86,
+      "total_orders_placed": 102,
+      "cost_breakdown": {
+        "holding_cost_usd": 61848.81,
+        "ordering_cost_usd": 5100.0,
+        "shortage_penalty_usd": 683783.18
+      },
+      "total_operating_cost_usd": 750731.99,
+      "mean_daily_inventory": 8062.43
+    },
+    "optimized_policy": {
+      "policy_name": "Optimized_Dynamic_ROP_EOQ",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.99,
+      "aggregate_fill_rate": 99.89,
+      "total_stockout_days": 1,
+      "total_orders_placed": 221,
+      "cost_breakdown": {
+        "holding_cost_usd": 53632.29,
+        "ordering_cost_usd": 11050.0,
+        "shortage_penalty_usd": 31244.11
+      },
+      "total_operating_cost_usd": 95926.4,
+      "mean_daily_inventory": 6991.35
+    },
+    "performance_delta": {
+      "volume_weighted_fill_rate_improvement_pct": 2.24,
+      "macro_average_fill_rate_improvement_pct": 5.51,
+      "fill_rate_improvement_pct": 2.24,
+      "stockout_days_reduction": 85,
+      "operating_cost_delta_usd": -654805.59
+    }
+  },
+  "incremental_ablation_ladder": [
+    {
+      "stage": "1_Baseline_Weekly",
+      "volume_weighted_fill_rate": 97.65,
+      "macro_average_fill_rate": 94.47,
+      "fill_rate": 0.9447346399541584,
+      "stockout_days": 86,
+      "orders_placed": 102,
+      "average_inventory": 8062.434389456349,
+      "cost_holding": 61848.81175473364,
+      "cost_ordering": 5100.0,
+      "cost_shortage": 683783.17774399,
+      "cost_operating_total": 750731.9894987235
+    },
+    {
+      "stage": "2_Daily_Review_Only",
+      "volume_weighted_fill_rate": 99.64,
+      "macro_average_fill_rate": 99.47,
+      "fill_rate": 0.9946801299713465,
+      "stockout_days": 12,
+      "orders_placed": 127,
+      "average_inventory": 8277.922131309577,
+      "cost_holding": 63501.86840456661,
+      "cost_ordering": 6350.0,
+      "cost_shortage": 103615.06657783591,
+      "cost_operating_total": 173466.9349824025
+    },
+    {
+      "stage": "3_Daily_Review_Plus_SS",
+      "volume_weighted_fill_rate": 100.0,
+      "macro_average_fill_rate": 100.0,
+      "fill_rate": 1.0,
+      "stockout_days": 0,
+      "orders_placed": 138,
+      "average_inventory": 8916.129504214885,
+      "cost_holding": 68397.70578575802,
+      "cost_ordering": 6900.0,
+      "cost_shortage": 0.0,
+      "cost_operating_total": 75297.70578575804
+    },
+    {
+      "stage": "4_Full_Optimized_ROP_EOQ",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.99,
+      "fill_rate": 0.9998508247965302,
+      "stockout_days": 1,
+      "orders_placed": 221,
+      "average_inventory": 6991.35176960584,
+      "cost_holding": 53632.28754766124,
+      "cost_ordering": 11050.0,
+      "cost_shortage": 31244.112372145755,
+      "cost_operating_total": 95926.39991980701
+    }
+  ],
+  "sensitivity_analysis_summary": [
+    {
+      "parameter_tested": "initial_dos",
+      "scenario_label": "InitStock=14d supply (Baseline)",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.99,
+      "fill_rate": 0.9998508247965302,
+      "stockout_days": 1,
+      "cost_holding": 53632.28754766124,
+      "cost_ordering": 11050.0,
+      "cost_shortage": 31244.112372145755,
+      "cost_operating_total": 95926.39991980701
+    },
+    {
+      "parameter_tested": "initial_dos",
+      "scenario_label": "InitStock=21d supply",
+      "volume_weighted_fill_rate": 100.0,
+      "macro_average_fill_rate": 100.0,
+      "fill_rate": 1.0,
+      "stockout_days": 0,
+      "cost_holding": 99009.26639296254,
+      "cost_ordering": 7450.0,
+      "cost_shortage": 0.0,
+      "cost_operating_total": 106459.26639296254
+    },
+    {
+      "parameter_tested": "initial_dos",
+      "scenario_label": "InitStock=7d supply",
+      "volume_weighted_fill_rate": 99.96,
+      "macro_average_fill_rate": 99.58,
+      "fill_rate": 0.9957693414392794,
+      "stockout_days": 11,
+      "cost_holding": 28461.924993205303,
+      "cost_ordering": 14250.0,
+      "cost_shortage": 12255.43270449109,
+      "cost_operating_total": 54967.35769769639
+    },
+    {
+      "parameter_tested": "lead_time",
+      "scenario_label": "LeadTime=14d",
+      "volume_weighted_fill_rate": 99.63,
+      "macro_average_fill_rate": 99.23,
+      "fill_rate": 0.9922597706999486,
+      "stockout_days": 14,
+      "cost_holding": 55457.18424590889,
+      "cost_ordering": 14550.0,
+      "cost_shortage": 108005.67264939839,
+      "cost_operating_total": 178012.85689530728
+    },
+    {
+      "parameter_tested": "lead_time",
+      "scenario_label": "LeadTime=3d",
+      "volume_weighted_fill_rate": 99.99,
+      "macro_average_fill_rate": 99.99,
+      "fill_rate": 0.9998672223258751,
+      "stockout_days": 1,
+      "cost_holding": 51213.32273410343,
+      "cost_ordering": 9050.0,
+      "cost_shortage": 1567.6396095550308,
+      "cost_operating_total": 61830.96234365846
+    },
+    {
+      "parameter_tested": "lead_time",
+      "scenario_label": "LeadTime=7d (Baseline)",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.99,
+      "fill_rate": 0.9998508247965302,
+      "stockout_days": 1,
+      "cost_holding": 53632.28754766124,
+      "cost_ordering": 11050.0,
+      "cost_shortage": 31244.112372145755,
+      "cost_operating_total": 95926.39991980701
+    },
+    {
+      "parameter_tested": "service_level",
+      "scenario_label": "CSL=90%",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.97,
+      "fill_rate": 0.9997180471224053,
+      "stockout_days": 2,
+      "cost_holding": 52974.80860559569,
+      "cost_ordering": 10900.0,
+      "cost_shortage": 32811.751981700785,
+      "cost_operating_total": 96686.56058729648
+    },
+    {
+      "parameter_tested": "service_level",
+      "scenario_label": "CSL=95% (Baseline)",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.99,
+      "fill_rate": 0.9998508247965302,
+      "stockout_days": 1,
+      "cost_holding": 53632.28754766124,
+      "cost_ordering": 11050.0,
+      "cost_shortage": 31244.112372145755,
+      "cost_operating_total": 95926.39991980701
+    },
+    {
+      "parameter_tested": "service_level",
+      "scenario_label": "CSL=99%",
+      "volume_weighted_fill_rate": 100.0,
+      "macro_average_fill_rate": 100.0,
+      "fill_rate": 1.0,
+      "stockout_days": 0,
+      "cost_holding": 55047.623593977194,
+      "cost_ordering": 11100.0,
+      "cost_shortage": 0.0,
+      "cost_operating_total": 66147.6235939772
+    },
+    {
+      "parameter_tested": "shortage_penalty",
+      "scenario_label": "Penalty=1.0x Unit Cost",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.99,
+      "fill_rate": 0.9998508247965302,
+      "stockout_days": 1,
+      "cost_holding": 53632.28754766124,
+      "cost_ordering": 11050.0,
+      "cost_shortage": 20829.40824809717,
+      "cost_operating_total": 85511.69579575842
+    },
+    {
+      "parameter_tested": "shortage_penalty",
+      "scenario_label": "Penalty=1.5x Unit Cost (Baseline)",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.99,
+      "fill_rate": 0.9998508247965302,
+      "stockout_days": 1,
+      "cost_holding": 53632.28754766124,
+      "cost_ordering": 11050.0,
+      "cost_shortage": 31244.112372145755,
+      "cost_operating_total": 95926.39991980701
+    },
+    {
+      "parameter_tested": "shortage_penalty",
+      "scenario_label": "Penalty=2.5x Unit Cost",
+      "volume_weighted_fill_rate": 99.89,
+      "macro_average_fill_rate": 99.99,
+      "fill_rate": 0.9998508247965302,
+      "stockout_days": 1,
+      "cost_holding": 53632.28754766124,
+      "cost_ordering": 11050.0,
+      "cost_shortage": 52073.520620242925,
+      "cost_operating_total": 116755.80816790418
+    }
+  ],
+  "tradeoff_analysis": "The incremental ablation study confirms that shifting to continuous review frequency and sizing safety stock dynamically are the primary drivers of stockout reduction. When shortage penalties are excluded, baseline ordering exhibits lower operational transaction costs due to infrequent weekly batches. When customer service availability is prioritized, the optimized policy delivers 99.89% volume-weighted fill rate (99.98% macro-average) with 98.8% fewer stockout days.",
+  "output_artifacts": {
+    "simulation_results_csv": "D:\\Projects\\Data Science\\Retail Sales Forecasting & Inventory Optimization System\\outputs\\simulation\\simulation_results.csv",
+    "ablation_study_csv": "D:\\Projects\\Data Science\\Retail Sales Forecasting & Inventory Optimization System\\outputs\\simulation\\ablation_study_results.csv",
+    "sensitivity_analysis_csv": "D:\\Projects\\Data Science\\Retail Sales Forecasting & Inventory Optimization System\\outputs\\simulation\\sensitivity_analysis_results.csv"
+  }
+}
