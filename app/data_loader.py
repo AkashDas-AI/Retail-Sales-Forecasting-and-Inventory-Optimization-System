@@ -134,14 +134,20 @@ def load_sales_history_sample(
     """Load and filter daily sales history on demand without loading entire 3M rows repeatedly.
 
     If store and family are specified, extracts only the relevant series trajectory.
+    Falls back gracefully to data/sample/sales_daily_sample.csv if full processed data is absent.
     """
     sales_path = PROJECT_ROOT / "data" / "processed" / "sales_daily.csv"
-    if not sales_path.exists():
-        raise FileNotFoundError(f"Sales history file not found at: {sales_path}")
+    sample_path = PROJECT_ROOT / "data" / "sample" / "sales_daily_sample.csv"
+
+    target_path = sales_path if sales_path.exists() else sample_path
+    if not target_path.exists():
+        raise FileNotFoundError(
+            f"Sales history file not found at: {sales_path} or sample fixture at: {sample_path}"
+        )
 
     # Usecols projection minimizes memory usage
     cols = ["date", "store_nbr", "family", "sales", "onpromotion"]
-    df = pd.read_csv(sales_path, usecols=cols)
+    df = pd.read_csv(target_path, usecols=cols)
     df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
 
     if store_nbr is not None:

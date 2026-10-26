@@ -47,13 +47,17 @@ def render_sales_exploration() -> None:
     )
 
     # Fetch data on demand (cached)
-    with st.spinner(f"Loading daily sales history for Store {store_nbr} - {family}..."):
-        series_sales_df = load_sales_history_sample(
-            store_nbr=store_nbr,
-            family=family,
-            start_date=start_date,
-            end_date=end_date,
-        )
+    try:
+        with st.spinner(f"Loading daily sales history for Store {store_nbr} - {family}..."):
+            series_sales_df = load_sales_history_sample(
+                store_nbr=store_nbr,
+                family=family,
+                start_date=start_date,
+                end_date=end_date,
+            )
+    except FileNotFoundError as err:
+        st.warning(f"Sales history dataset unavailable: {err}. Please run the data preparation pipeline.")
+        return
 
     if series_sales_df.empty:
         st.warning(f"No sales observations found for Store {store_nbr} - {family} within {start_date} to {end_date}.")

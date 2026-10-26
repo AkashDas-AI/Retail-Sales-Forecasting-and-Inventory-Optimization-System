@@ -32,6 +32,7 @@ from app.data_loader import (
     load_predictions_one_step,
     load_project_config,
     load_purchase_orders,
+    load_sales_history_sample,
     load_sensitivity_results,
     load_simulation_evaluation_report,
     load_simulation_results,
@@ -154,6 +155,17 @@ def test_load_predictions_and_sensitivities() -> None:
     sens = load_sensitivity_results()
     assert isinstance(sens, pd.DataFrame)
     assert not sens.empty
+
+
+def test_load_sales_history_sample() -> None:
+    """Verify sales history loader works with filtering and falls back gracefully to sample fixture."""
+    df = load_sales_history_sample(store_nbr=1, family="GROCERY I")
+    assert isinstance(df, pd.DataFrame)
+    assert not df.empty
+    assert (df["store_nbr"] == 1).all()
+    assert (df["family"] == "GROCERY I").all()
+    assert "sales" in df.columns
+    assert "onpromotion" in df.columns
 
 
 # =====================================================================
