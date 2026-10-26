@@ -67,6 +67,13 @@ docs/interview_preparation_guide.md
 docs/interview_notes.md
 
 # ==============================================================================
+# Local Maintenance & Cleanup Documentation (Excluded from Public Git)
+# ==============================================================================
+docs/*cleanup*
+docs/*restoration*
+docs/project_cleanup_and_restoration_guide.md
+
+# ==============================================================================
 # IDE & Machine-Specific Metadata
 # ==============================================================================
 .vscode/*
