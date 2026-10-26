@@ -111,10 +111,13 @@ models/*
 # ==============================================================================
 outputs/forecasts/*
 !outputs/forecasts/.gitkeep
+!outputs/forecasts/*.csv
 outputs/recommendations/*
 !outputs/recommendations/.gitkeep
+!outputs/recommendations/*.csv
 outputs/simulation/*
 !outputs/simulation/.gitkeep
+!outputs/simulation/*.csv
 reports/figures/*
 !reports/figures/.gitkeep
 reports/metrics/*
