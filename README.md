@@ -341,8 +341,8 @@ Retail Sales Forecasting & Inventory Optimization System/
 
 ```powershell
 # 1. Clone repository
-git clone https://github.com/your-username/retail-sales-forecasting-inventory-optimization.git
-cd "retail-sales-forecasting-inventory-optimization"
+git clone https://github.com/AkashDas-AI/Retail-Sales-Forecasting-and-Inventory-Optimization-System.git
+cd "Retail-Sales-Forecasting-and-Inventory-Optimization-System"
 
 # 2. Create project-local virtual environment
 python -m venv .venv
