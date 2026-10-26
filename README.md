@@ -1,5 +1,13 @@
 # Retail Sales Forecasting and Inventory Optimization System
 
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
+[![Tests: 114 Passed](https://img.shields.io/badge/tests-114%20passed-brightgreen.svg)](docs/06_verification_and_validation.md)
+[![CI Build: Passing](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/AkashDas-AI/Retail-Sales-Forecasting-and-Inventory-Optimization-System/actions)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Streamlit App](https://img.shields.io/badge/dashboard-Streamlit-FF4B4B.svg)](app.py)
+[![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](CONTRIBUTING.md)
+[![Architecture: Policy--Simulation](https://img.shields.io/badge/architecture-policy--simulation-orange.svg)](docs/architecture.md)
+
 An enterprise-grade predictive and prescriptive decision-support system. This project integrates machine learning retail demand forecasting with statistical inventory control and discrete-event simulation to calculate dynamic Safety Stock, Reorder Points, and Economic Order Quantities.
 
 ---
@@ -418,7 +426,7 @@ Open `http://localhost:8501` in your web browser. Use the sidebar to navigate be
 
 ## 15. Testing and Quality Assurance
 
-The codebase includes a comprehensive test suite of 113 automated unit and integration tests covering data validation, leakage prevention, forecasting models, inventory calculations, simulation balance conservation, and headless UI rendering:
+The codebase includes a comprehensive test suite of 114 automated unit and integration tests covering data validation, leakage prevention, forecasting models, inventory calculations, simulation balance conservation, and headless UI rendering:
 
 ```powershell
 # Execute full test suite
@@ -429,7 +437,7 @@ The codebase includes a comprehensive test suite of 113 automated unit and integ
 ```
 
 Latest test execution result:
-- Status: 113 passed, 0 failed, 0 skipped, 0 warnings (completed in 28.28 seconds)
+- Status: 114 passed, 0 failed, 0 skipped, 0 warnings (completed in 26.08 seconds)
 - Platform: Windows (Python 3.11, pytest 9.1)
 
 ---
@@ -452,7 +460,16 @@ Latest test execution result:
 
 ---
 
-## 18. License and Data Terms
+## 18. Contribution and Contact
+
+Contributions, bug reports, and suggestions are welcome. Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for details on code style, typing standards, and testing policies before opening a pull request.
+
+- **Author**: Akash Das
+- **Issue Tracker**: Use the GitHub repository issue tracker to report defects or propose enhancements.
+
+---
+
+## 19. License and Data Terms
 
 This software is released under the [MIT License](LICENSE).
 
